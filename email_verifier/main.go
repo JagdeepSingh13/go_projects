@@ -1,5 +1,7 @@
 package main
 
+// to check valid domain names
+
 import (
 	"bufio"
 	"fmt"
