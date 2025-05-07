@@ -48,13 +48,14 @@ func (uc UserController) GetUser(w http.ResponseWriter, r *http.Request, p httpr
 
 	// Respond with the user
 	w.Header().Set("Content-Type", "application/json")
+	// Marshal's
 	json.NewEncoder(w).Encode(user)
 }
 
 func (uc UserController) CreateUser(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	var user models.User
 
-	// Decode the request body
+	// Decode the request body (Unmarshal's)
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)

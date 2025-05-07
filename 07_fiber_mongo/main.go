@@ -63,6 +63,7 @@ func main() {
 	app.Get("/employee", func(c *fiber.Ctx) error {
 		query := bson.D{{}}
 
+		// returns a Cursor over the matching documents in the collection.
 		cursor, err := mg.Db.Collection("employees").Find(c.Context(), query)
 		if err != nil {
 			return c.Status(500).SendString(err.Error())
@@ -82,11 +83,12 @@ func main() {
 		collection := mg.Db.Collection("employees")
 
 		employee := new(Employee)
+		//  binds the request body to a struct.
 		if err := c.BodyParser(employee); err != nil {
 			return c.Status(400).SendString(err.Error())
 		}
-
 		employee.ID = ""
+
 		insertionResult, err := collection.InsertOne(c.Context(), employee)
 		if err != nil {
 			return c.Status(500).SendString(err.Error())
@@ -98,6 +100,8 @@ func main() {
 		createdRecord := collection.FindOne(c.Context(), filter)
 
 		createdEmployee := &Employee{}
+
+		// Unmarshal is the process of converting JSON data into a Go object (e.g., a struct).
 		createdRecord.Decode(createdEmployee)
 
 		return c.Status(201).JSON(createdEmployee)
