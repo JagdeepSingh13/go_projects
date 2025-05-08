@@ -1,0 +1,12 @@
+{
+	"Name": "Hero",
+	"Age": 25,
+	"Contact": "23213432",
+	"Company": "In tech",
+	"Address": {
+		"City": "del",
+		"State": "del",
+		"Country": "IN",
+		"Pincode": 6789
+	}
+}

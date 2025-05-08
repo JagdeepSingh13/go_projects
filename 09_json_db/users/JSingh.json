@@ -1,0 +1,12 @@
+{
+	"Name": "JSingh",
+	"Age": 69,
+	"Contact": "2345678",
+	"Company": "FU tech",
+	"Address": {
+		"City": "BIJ",
+		"State": "pu",
+		"Country": "IN",
+		"Pincode": 8765
+	}
+}

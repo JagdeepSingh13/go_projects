@@ -1,0 +1,12 @@
+{
+	"Name": "John",
+	"Age": 23,
+	"Contact": "23213432",
+	"Company": "My tech",
+	"Address": {
+		"City": "bang",
+		"State": "Kt",
+		"Country": "IN",
+		"Pincode": 1234
+	}
+}
