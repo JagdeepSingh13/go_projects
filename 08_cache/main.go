@@ -10,6 +10,8 @@ type Node struct {
 	Right *Node
 }
 
+// Head and Tail are empty nodes which point at
+// first and last values resp.
 type Queue struct {
 	Head   *Node
 	Tail   *Node
@@ -41,6 +43,7 @@ func NewQueue() Queue {
 func (c *Cache) Check(str string) {
 	node := &Node{}
 
+	// check if value already exists in the Hash
 	if val, ok := c.Hash[str]; ok {
 		node = c.Remove(val)
 	} else {
